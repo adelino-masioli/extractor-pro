@@ -1,0 +1,58 @@
+{% if error %}
+    {# Alerta de Erro com texto traduzível #}
+    <div class="alert alert-danger d-flex align-items-center border-danger border-2" role="alert">
+      <i class="bi bi-shield-fill-exclamation me-3 fs-4"></i>
+      <div class="fw-bold">
+        {# A mensagem de erro já vem traduzida do backend (se usar _() lá) #}
+        <strong>{{ _('Error:') }}</strong> {{ error }}
+      </div>
+    </div>
+{% endif %}
+
+{% if text %}
+    {# Alerta de Sucesso com texto traduzível #}
+    <div class="alert alert-success d-flex align-items-center border-success border-2" role="alert">
+       <i class="bi bi-check-circle-fill me-3 fs-4"></i>
+       <div class="fw-bold">
+         {# Mensagem de sucesso traduzível #}
+         {{ _('Text extracted successfully from:') }} <span class="text-break">{{ source if source else _('uploaded PDF') }}</span>
+         <br>
+         {# Contagem de caracteres (formato pode precisar de l10n, mas aqui só número) #}
+         <small class="text-muted">({{ '{:,}'.format(text|length) }} {{ _('characters') }})</small>
+       </div>
+    </div>
+
+    <div class="card border-secondary mt-3">
+        <div class="card-header bg-secondary text-white">
+             {# Título do card traduzível #}
+            <h3 class="h5 mb-0"><i class="bi bi-textarea-t me-2"></i> {{ _('Extracted Text') }}</h3>
+        </div>
+        <div class="card-body">
+            <div class="extracted-text-wrapper p-3 bg-white border rounded mb-3 shadow-sm" style="max-height: 500px; overflow-y: auto; font-size: 0.9rem;">
+                <pre class="mb-0" style="white-space: pre-wrap; word-wrap: break-word;">{{ text }}</pre>
+            </div>
+
+            <div class="download-options mt-4">
+                 {# Título das opções de download traduzível #}
+                <h4 class="h6 mb-3 fw-bold"><i class="bi bi-download me-2"></i>{{ _('Save Result As:') }}</h4>
+                {# Botões de Download com títulos (tooltips) traduzíveis #}
+                <a href="{{ url_for('download_file', format='txt') }}" class="btn btn-primary me-2 mb-2" title="{{ _('Save as Plain Text (.txt)') }}">
+                    <i class="bi bi-file-text me-1"></i> TXT
+                </a>
+                <a href="{{ url_for('download_file', format='csv') }}" class="btn btn-success me-2 mb-2" title="{{ _('Save as CSV (each text line in a CSV row)') }}">
+                    <i class="bi bi-file-earmark-spreadsheet me-1"></i> CSV
+                </a>
+                <a href="{{ url_for('download_file', format='json') }}" class="btn btn-info mb-2" title="{{ _('Save as JSON (list of lines)') }}">
+                    <i class="bi bi-file-code me-1"></i> JSON
+                </a>
+            </div>
+            {# Nota sobre JS (se aplicável), traduzível #}
+            {% if 'JavaScript' in error|default('') or 'JavaScript' in text|default('') %} {# Verifica se a palavra aparece no erro ou texto #}
+            <div class="alert alert-warning mt-3 small" role="alert">
+                <i class="bi bi-exclamation-diamond-fill me-2"></i>
+                <strong>{{ _('Note:') }}</strong> {{ _('Text extraction from web pages might not include content loaded dynamically by JavaScript.') }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

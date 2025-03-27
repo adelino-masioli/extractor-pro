@@ -1,0 +1,62 @@
+# --- Virtual Environment ---
+# Standard venv directory name
+myenv/
+# Other common names
+venv/
+env/
+.venv/
+.env/ # Also covers the config file, but be specific below
+*.pyenv # Pyenv version file
+
+# --- Python Cache & Compiled Files ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# --- Configuration / Secrets ---
+# IMPORTANT: Ignore environment variables file
+.env
+instance/ # Flask instance folder
+
+# --- Babel / i18n ---
+# Ignore compiled message catalogs
+*.mo
+
+# --- IDE / Editor Files ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+*~
+.project
+.pydevproject
+.settings/
+
+# --- OS Generated Files ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Logs and Temporary Files ---
+*.log
+*.log.*
+*.tmp
+
+# --- Uploads (If a specific directory were used) ---
+# uploads/
+# static/uploads/
+
+# --- Other ---
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg

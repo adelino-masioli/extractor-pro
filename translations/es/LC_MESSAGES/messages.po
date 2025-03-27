@@ -1,0 +1,545 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-03-27 14:53+0000\n"
+"PO-Revision-Date: 2025-03-27 08:39+0000\n" # Data atualizada
+"Last-Translator: Junior Ferreira <EMAIL@ADDRESS>\n" # Pode atualizar
+"Language: es\n" # Idioma definido para Espanhol
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n" # Regras de plural para espanhol
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:94
+#, python-format
+msgid "The content from \"%(source)s\" does not appear to be a valid PDF."
+msgstr "El contenido de \"%(source)s\" no parece ser un PDF válido."
+
+#: app.py:97
+#, python-format
+msgid "The PDF from \"%(source)s\" is password protected and cannot be processed."
+msgstr "El PDF de \"%(source)s\" está protegido por contraseña y no puede ser procesado."
+
+#: app.py:110
+#, python-format
+msgid ""
+"No extractable text found in the PDF \"%(source)s\". It might be an image"
+" file, empty, or contain only graphics."
+msgstr "No se encontró texto extraíble en el PDF \"%(source)s\". Podría ser un archivo de imagen, estar vacío o contener solo gráficos."
+
+#: app.py:113
+#, python-format
+msgid "Invalid or corrupted PDF file from \"%(source)s\": %(error)s"
+msgstr "Archivo PDF inválido o corrupto de \"%(source)s\": %(error)s"
+
+#: app.py:119
+#, python-format
+msgid "Invalid or unsupported PDF format from \"%(source)s\": %(error)s"
+msgstr "Formato PDF inválido o no soportado de \"%(source)s\": %(error)s"
+
+#: app.py:121
+#, python-format
+msgid "Unexpected error processing the PDF from \"%(source)s\": %(error)s"
+msgstr "Error inesperado al procesar el PDF de \"%(source)s\": %(error)s"
+
+#: app.py:134
+#, python-format
+msgid ""
+"No main text found at \"%(url)s\". The page might be empty, heavily "
+"reliant on JavaScript, or the main content was removed during parsing."
+msgstr "No se encontró texto principal en \"%(url)s\". La página podría estar vacía, depender mucho de JavaScript o el contenido principal fue eliminado durante el análisis."
+
+#: app.py:138
+#, python-format
+msgid "Error parsing HTML content from URL \"%(url)s\": %(error)s"
+msgstr "Error al analizar el contenido HTML de la URL \"%(url)s\": %(error)s"
+
+#: app.py:155
+msgid "input"
+msgstr "entrada"
+
+#: app.py:165
+msgid "Invalid file type for upload."
+msgstr "Tipo de archivo inválido para subir."
+
+#: app.py:165
+msgid "Please upload a PDF."
+msgstr "Por favor, sube un PDF."
+
+#: app.py:176
+msgid "Invalid URL format."
+msgstr "Formato de URL inválido."
+
+#: app.py:195
+#, python-format
+msgid "The content at the URL is too large (larger than %(max_size)sMB)."
+msgstr "El contenido en la URL es demasiado grande (mayor que %(max_size)sMB)."
+
+#: app.py:208
+#, python-format
+msgid ""
+"The URL does not point to a supported PDF or HTML page (Content-Type: "
+"%(ctype)s)."
+msgstr "La URL no apunta a una página PDF o HTML soportada (Content-Type: %(ctype)s)."
+
+#: app.py:210
+#, python-format
+msgid "Timeout (%(sec)ss) when trying to access the URL: %(url)s"
+msgstr "Tiempo de espera agotado (%(sec)ss) al intentar acceder a la URL: %(url)s"
+
+#: app.py:214
+#, python-format
+msgid "Network error accessing the URL %(url)s: %(error)s"
+msgstr "Error de red al acceder a la URL %(url)s: %(error)s"
+
+#: app.py:218
+msgid "No PDF file was uploaded or valid URL provided."
+msgstr "No se subió ningún archivo PDF o no se proporcionó una URL válida."
+
+#: app.py:227
+#, python-format
+msgid ""
+"Could not extract text from \"%(source)s\" (empty result after "
+"processing)."
+msgstr "No se pudo extraer texto de \"%(source)s\" (resultado vacío después del procesamiento)."
+
+#: app.py:237
+msgid ""
+"An unexpected error occurred during processing. Check server logs for "
+"details."
+msgstr "Ocurrió un error inesperado durante el procesamiento. Revisa los logs del servidor para detalles."
+
+#: app.py:250
+msgid ""
+"Error: No extracted text found in the current session for download. "
+"Please try processing a PDF or URL again."
+msgstr "Error: No se encontró texto extraído en la sesión actual para descargar. Por favor, intenta procesar un PDF o URL nuevamente."
+
+#: app.py:253
+msgid "Invalid download format."
+msgstr "Formato de descarga inválido."
+
+#: app.py:266 templates/results.html:28
+msgid "Extracted Text"
+msgstr "Texto Extraído"
+
+#: app.py:286
+msgid "Error generating the file for download."
+msgstr "Error al generar el archivo para descargar."
+
+#: myenv/lib/python3.10/site-packages/click/_termui_impl.py:556
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr "{editor}: Edición fallida"
+
+#: myenv/lib/python3.10/site-packages/click/_termui_impl.py:560
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr "{editor}: Edición fallida: {e}"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1124
+msgid "Aborted!"
+msgstr "¡Abortado!"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1349
+#: myenv/lib/python3.10/site-packages/click/core.py:1379
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr "(Obsoleto) {text}"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1396
+msgid "Options"
+msgstr "Opciones"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1422
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] "Argumento extra inesperado ({args})"
+msgstr[1] "Argumentos extras inesperados ({args})"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1438
+#, python-brace-format
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr "AdvertenciaDeObsolescencia: El comando {name!r} es obsoleto."
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1645
+msgid "Commands"
+msgstr "Comandos"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1677
+msgid "Missing command."
+msgstr "Falta comando."
+
+#: myenv/lib/python3.10/site-packages/click/core.py:1755
+#, python-brace-format
+msgid "No such command {name!r}."
+msgstr "No existe el comando {name!r}."
+
+#: myenv/lib/python3.10/site-packages/click/core.py:2313
+msgid "Value must be an iterable."
+msgstr "El valor debe ser iterable."
+
+#: myenv/lib/python3.10/site-packages/click/core.py:2334
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] "Toma {nargs} valor pero se dio 1."
+msgstr[1] "Toma {nargs} valores pero se dieron {len}."
+
+#: myenv/lib/python3.10/site-packages/click/core.py:2783
+#, python-brace-format
+msgid "env var: {var}"
+msgstr "var ent: {var}"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:2813
+msgid "(dynamic)"
+msgstr "(dinámico)"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:2828
+#, python-brace-format
+msgid "default: {default}"
+msgstr "predeterminado: {default}"
+
+#: myenv/lib/python3.10/site-packages/click/core.py:2841
+msgid "required"
+msgstr "requerido"
+
+#: myenv/lib/python3.10/site-packages/click/decorators.py:457
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr "%(prog)s, versión %(version)s"
+
+#: myenv/lib/python3.10/site-packages/click/decorators.py:520
+msgid "Show the version and exit."
+msgstr "Mostrar la versión y salir."
+
+#: myenv/lib/python3.10/site-packages/click/decorators.py:541
+msgid "Show this message and exit."
+msgstr "Mostrar este mensaje y salir."
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:49
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:88
+#, python-brace-format
+msgid "Error: {message}"
+msgstr "Error: {message}"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:80
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr "Prueba '{command} {option}' para obtener ayuda."
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:129
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr "Valor inválido: {message}"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:131
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr "Valor inválido para {param_hint}: {message}"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:187
+msgid "Missing argument"
+msgstr "Falta argumento"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:189
+msgid "Missing option"
+msgstr "Falta opción"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:191
+msgid "Missing parameter"
+msgstr "Falta parámetro"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:193
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr "Falta {param_type}"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:200
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr "Falta parámetro: {param_name}"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:220
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr "No existe la opción: {name}"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:232
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] "¿Quizás quisiste decir {possibility}?"
+msgstr[1] "(Opciones posibles: {possibilities})"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:270
+msgid "unknown error"
+msgstr "error desconocido"
+
+#: myenv/lib/python3.10/site-packages/click/exceptions.py:277
+#, python-brace-format
+msgid "Could not open file {filename!r}: {message}"
+msgstr "No se pudo abrir el archivo {filename!r}: {message}"
+
+#: myenv/lib/python3.10/site-packages/click/parser.py:233
+#, python-brace-format
+msgid "Argument {name!r} takes {nargs} values."
+msgstr "Argumento {name!r} toma {nargs} valores."
+
+#: myenv/lib/python3.10/site-packages/click/parser.py:415
+#, python-brace-format
+msgid "Option {name!r} does not take a value."
+msgstr "Opción {name!r} no toma un valor."
+
+#: myenv/lib/python3.10/site-packages/click/parser.py:476
+#, python-brace-format
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] "Opción {name!r} requiere un argumento."
+msgstr[1] "Opción {name!r} requiere {nargs} argumentos."
+
+#: myenv/lib/python3.10/site-packages/click/shell_completion.py:326
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr "El autocompletado de shell no es compatible con versiones de Bash anteriores a 4.4."
+
+#: myenv/lib/python3.10/site-packages/click/shell_completion.py:333
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr "No se pudo detectar la versión de Bash, el autocompletado de shell no es compatible."
+
+#: myenv/lib/python3.10/site-packages/click/termui.py:158
+msgid "Repeat for confirmation"
+msgstr "Repite para confirmar"
+
+#: myenv/lib/python3.10/site-packages/click/termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr "Error: El valor introducido no es válido."
+
+#: myenv/lib/python3.10/site-packages/click/termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr "Error: {e.message}"
+
+#: myenv/lib/python3.10/site-packages/click/termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr "Error: Los dos valores introducidos no coinciden."
+
+#: myenv/lib/python3.10/site-packages/click/termui.py:243
+msgid "Error: invalid input"
+msgstr "Error: entrada inválida"
+
+#: myenv/lib/python3.10/site-packages/click/termui.py:773
+msgid "Press any key to continue..."
+msgstr "Presiona cualquier tecla para continuar..."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:267
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+"Elige de entre:\n"
+"\t{choices}"
+
+#: myenv/lib/python3.10/site-packages/click/types.py:299
+#, python-brace-format
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] "{value!r} no es {choice}."
+msgstr[1] "{value!r} no es uno de {choices}."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:393
+#, python-brace-format
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] "{value!r} no coincide con el formato {format}."
+msgstr[1] "{value!r} no coincide con los formatos {formats}."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:415
+#, python-brace-format
+msgid "{value!r} is not a valid {number_type}."
+msgstr "{value!r} no es un {number_type} válido."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:471
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr "{value} no está en el rango {range}."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:612
+#, python-brace-format
+msgid "{value!r} is not a valid boolean."
+msgstr "{value!r} no es un booleano válido."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:636
+#, python-brace-format
+msgid "{value!r} is not a valid UUID."
+msgstr "{value!r} no es un UUID válido."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:826
+msgid "file"
+msgstr "archivo"
+
+#: myenv/lib/python3.10/site-packages/click/types.py:828
+msgid "directory"
+msgstr "directorio"
+
+#: myenv/lib/python3.10/site-packages/click/types.py:830
+msgid "path"
+msgstr "ruta"
+
+#: myenv/lib/python3.10/site-packages/click/types.py:881
+#, python-brace-format
+msgid "{name} {filename!r} does not exist."
+msgstr "{name} {filename!r} no existe."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:890
+#, python-brace-format
+msgid "{name} {filename!r} is a file."
+msgstr "{name} {filename!r} es un archivo."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:898
+#, python-brace-format
+msgid "{name} {filename!r} is a directory."
+msgstr "{name} {filename!r} es un directorio."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:907
+#, python-brace-format
+msgid "{name} {filename!r} is not readable."
+msgstr "{name} {filename!r} no es legible."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:916
+#, python-brace-format
+msgid "{name} {filename!r} is not writable."
+msgstr "{name} {filename!r} no es escribible."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:925
+#, python-brace-format
+msgid "{name} {filename!r} is not executable."
+msgstr "{name} {filename!r} no es ejecutable."
+
+#: myenv/lib/python3.10/site-packages/click/types.py:992
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] "Se requiere {len_type} valor, pero se dio {len_value}."
+msgstr[1] "Se requieren {len_type} valores, pero se dieron {len_value}."
+
+#: templates/index.html:8
+msgid "PDF & URL Extractor"
+msgstr "Extractor de PDF y URL"
+
+#: templates/index.html:19
+msgid "Extractor Pro"
+msgstr "Extractor Pro"
+
+#: templates/index.html:39
+msgid "Extract Text from PDF or Web Page"
+msgstr "Extraer Texto de PDF o Página Web"
+
+#: templates/index.html:43
+msgid ""
+"Upload a PDF file or provide the URL of an online PDF or a web page to "
+"extract the main text."
+msgstr "Sube un archivo PDF o proporciona la URL de un PDF en línea o una página web para extraer el texto principal."
+
+#: templates/index.html:55
+msgid "PDF File Upload:"
+msgstr "Subir Archivo PDF:"
+
+#: templates/index.html:58
+msgid "Select a PDF file from your computer."
+msgstr "Selecciona un archivo PDF de tu ordenador."
+
+#: templates/index.html:63
+msgid "OR"
+msgstr "O"
+
+#: templates/index.html:68
+msgid "URL (PDF or Web Page):"
+msgstr "URL (PDF o Página Web):"
+
+#: templates/index.html:70
+msgid "e.g., https://example.com/document.pdf OR https://site.com/page.html"
+msgstr "ej: https://example.com/documento.pdf O https://site.com/pagina.html"
+
+#: templates/index.html:72
+msgid "Paste the full URL (including http:// or https://)."
+msgstr "Pega la URL completa (incluyendo http:// o https://)."
+
+#: templates/index.html:78
+msgid "Process and Extract Text"
+msgstr "Procesar y Extraer Texto"
+
+#: templates/index.html:85
+msgid "Processing..."
+msgstr "Procesando..."
+
+#: templates/index.html:88
+msgid "Processing, please wait..."
+msgstr "Procesando, por favor espera..."
+
+#: templates/index.html:95
+msgid "Results:"
+msgstr "Resultados:"
+
+#: templates/index.html:98
+msgid "Waiting for input..."
+msgstr "Esperando entrada..."
+
+#: templates/index.html:107
+msgid "Developed with"
+msgstr "Desarrollado con"
+
+#: templates/index.html:107
+msgid "using Python, Flask, HTMX & Bootstrap."
+msgstr "usando Python, Flask, HTMX & Bootstrap."
+
+#: templates/results.html:7
+msgid "Error:"
+msgstr "Error:"
+
+#: templates/results.html:18
+msgid "Text extracted successfully from:"
+msgstr "Texto extraído con éxito de:"
+
+#: templates/results.html:18
+msgid "uploaded PDF"
+msgstr "PDF subido"
+
+#: templates/results.html:21
+msgid "characters"
+msgstr "caracteres"
+
+#: templates/results.html:37
+msgid "Save Result As:"
+msgstr "Guardar Resultado Como:"
+
+#: templates/results.html:39
+msgid "Save as Plain Text (.txt)"
+msgstr "Guardar como Texto Plano (.txt)"
+
+#: templates/results.html:42
+msgid "Save as CSV (each text line in a CSV row)"
+msgstr "Guardar como CSV (cada línea de texto en una fila CSV)"
+
+#: templates/results.html:45
+msgid "Save as JSON (list of lines)"
+msgstr "Guardar como JSON (lista de líneas)"
+
+#: templates/results.html:53
+msgid "Note:"
+msgstr "Nota:"
+
+#: templates/results.html:53
+msgid ""
+"Text extraction from web pages might not include content loaded "
+"dynamically by JavaScript."
+msgstr "La extracción de texto de páginas web podría no incluir contenido cargado dinámicamente por JavaScript."

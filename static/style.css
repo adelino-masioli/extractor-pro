@@ -1,0 +1,41 @@
+/* static/style.css */
+
+/* Garante que o indicador HTMX esteja oculto por padrão */
+.htmx-indicator {
+  display: none;
+}
+/* Mostra o indicador quando o formulário está processando */
+#process-form.htmx-request ~ #results #loading-indicator, /* Se estiver fora do target */
+#process-form.htmx-request #loading-indicator, /* Se estiver dentro do form */
+#process-form.htmx-request + #loading-indicator /* Se for irmão adjacente */
+{
+   display: block !important; /* Ou flex, dependendo do layout interno */
+}
+
+
+/* Melhora a fonte monoespaçada no resultado */
+.extracted-text-wrapper pre {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 0.875em; /* Ligeiramente menor */
+  line-height: 1.5;
+}
+
+/* Ajuste fino no header do card de resultados */
+#results .card-header {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Quebra de linha em URLs longas no alerta de sucesso */
+.text-break {
+  word-break: break-all;
+}
+
+/* Opcional: Animação suave no hover dos botões */
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
