@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {# Título traduzível #}
-    <title>{{ _('PDF & URL Extractor') }}</title>
+    {# MODIFICADO: Título mais genérico #}
+    <title>{{ _('File & URL Text Extractor') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <i class="bi bi-file-earmark-text-fill"></i> {{ _('Extractor Pro') }} <span class="badge bg-light text-primary ms-2">v1.1-i18n</span>
+                <i class="bi bi-file-earmark-text-fill"></i> {{ _('Extractor Pro') }} <span class="badge bg-light text-primary ms-2">v1.2-multi</span> {# MODIFICADO: Versão exemplo #}
             </a>
             {# Dropdown para seleção de idioma #}
             <div class="dropdown">
@@ -35,12 +35,12 @@
     <main class="container flex-grow-1 my-4">
         <div class="card shadow-sm border-0">
             <div class="card-header bg-gradient bg-primary text-white">
-                 {# Título do card traduzível #}
-                 <h1 class="h4 mb-0"><i class="bi bi-robot me-2"></i> {{ _('Extract Text from PDF or Web Page') }}</h1>
+                 {# MODIFICADO: Título do card mais genérico #}
+                 <h1 class="h4 mb-0"><i class="bi bi-robot me-2"></i> {{ _('Extract Text from Files or URLs') }}</h1>
             </div>
             <div class="card-body p-4">
-                {# Instruções traduzíveis #}
-                <p class="card-text text-muted mb-4">{{ _('Upload a PDF file or provide the URL of an online PDF or a web page to extract the main text.') }}</p>
+                {# MODIFICADO: Instruções atualizadas #}
+                <p class="card-text text-muted mb-4">{{ _('Upload a PDF, Word (DOCX), or PowerPoint (PPTX) file, or provide the URL of an online file or web page to extract text.') }}</p>
 
                 <form
                     hx-post="/process"
@@ -51,29 +51,28 @@
                     id="process-form">
 
                     <div class="mb-3">
-                        {# Label traduzível #}
-                        <label for="pdf_file" class="form-label fw-bold"><i class="bi bi-file-earmark-arrow-up me-2"></i>{{ _('PDF File Upload:') }}</label>
-                        <input class="form-control form-control-lg" type="file" id="pdf_file" name="pdf_file" accept=".pdf">
-                         {# Texto de ajuda traduzível #}
-                        <div class="form-text">{{ _('Select a PDF file from your computer.') }}</div>
+                        {# MODIFICADO: Label atualizada e 'for' corresponde ao novo 'id' #}
+                        <label for="file_input" class="form-label fw-bold"><i class="bi bi-file-earmark-arrow-up me-2"></i>{{ _('File Upload:') }}</label>
+                        {# MODIFICADO: ID e Name alterados, Accept atualizado #}
+                        <input class="form-control form-control-lg" type="file" id="file_input" name="file_input" accept=".pdf,.docx,.pptx">
+                         {# MODIFICADO: Texto de ajuda usa variável passada do Flask #}
+                        <div class="form-text">{{ _('Allowed file types: %(types)s. Max size: %(size)sMB.', types=allowed_extensions, size=config['MAX_CONTENT_LENGTH']//(1024*1024) ) }}</div>
                     </div>
 
                     <div class="text-center my-4">
-                         {# Divisor traduzível #}
                         <span class="text-muted fw-bold h5">----- {{ _('OR') }} -----</span>
                     </div>
 
                     <div class="mb-3">
-                         {# Label traduzível #}
-                        <label for="input_url" class="form-label fw-bold"><i class="bi bi-link-45deg me-2"></i>{{ _('URL (PDF or Web Page):') }}</label>
-                        {# Placeholder traduzível (exemplo não traduzido, mas poderia ser) #}
-                        <input type="url" class="form-control form-control-lg" id="input_url" name="input_url" placeholder="{{ _('e.g., https://example.com/document.pdf OR https://site.com/page.html') }}">
-                         {# Texto de ajuda traduzível #}
-                        <div class="form-text">{{ _('Paste the full URL (including http:// or https://).') }}</div>
+                         {# MODIFICADO: Label atualizada #}
+                        <label for="input_url" class="form-label fw-bold"><i class="bi bi-link-45deg me-2"></i>{{ _('URL (File or Web Page):') }}</label>
+                         {# MODIFICADO: Placeholder atualizado #}
+                        <input type="url" class="form-control form-control-lg" id="input_url" name="input_url" placeholder="{{ _('e.g., https://example.com/doc.pdf OR .../report.docx OR https://site.com') }}">
+                         {# MODIFICADO: Texto de ajuda atualizado #}
+                        <div class="form-text">{{ _('Paste the full URL of a PDF, DOCX, PPTX file, or a web page (HTML).') }}</div>
                     </div>
 
                     <div class="d-grid gap-2 mt-4 pt-2">
-                         {# Texto do botão traduzível #}
                         <button type="submit" class="btn btn-success btn-lg fw-bold">
                             <i class="bi bi-gear-fill me-2"></i> {{ _('Process and Extract Text') }}
                         </button>
@@ -81,29 +80,24 @@
 
                     <div id="loading-indicator" class="htmx-indicator mt-4 text-center">
                          <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                             {# Texto para acessibilidade traduzível #}
                             <span class="visually-hidden">{{ _('Processing...') }}</span>
                         </div>
-                         {# Texto do indicador traduzível #}
                         <p class="text-primary fw-bold mt-2 fs-5">{{ _('Processing, please wait...') }}</p>
                     </div>
                 </form>
 
                 <hr class="my-4">
 
-                {# Título da seção de resultados traduzível #}
                 <h2 class="h5 text-muted mb-3"><i class="bi bi-search me-2"></i>{{ _('Results:') }}</h2>
                 <div id="results" class="bg-light p-3 border rounded">
-                     {# Mensagem inicial traduzível #}
                     <p class="text-center text-muted fst-italic">{{ _('Waiting for input...') }}</p>
-                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
-             {# Texto do rodapé traduzível #}
              <small>{{ _('Developed with') }} <i class="bi bi-heart-fill text-danger"></i> {{ _('using Python, Flask, HTMX & Bootstrap.') }} &copy; <span id="current-year"></span></small>
         </div>
     </footer>
@@ -111,11 +105,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        const fileInput = document.getElementById('pdf_file');
+        // MODIFICADO: Seleciona pelo novo ID 'file_input'
+        const fileInput = document.getElementById('file_input');
         const urlInput = document.getElementById('input_url');
         if(fileInput && urlInput) {
-            fileInput.addEventListener('change', () => { if(fileInput.files.length > 0) { urlInput.value = ''; } });
-            urlInput.addEventListener('input', () => { if(urlInput.value.trim() !== '') { fileInput.value = ''; } });
+            // Limpa o campo URL se um arquivo for selecionado
+            fileInput.addEventListener('change', () => {
+                if(fileInput.files.length > 0) {
+                    urlInput.value = '';
+                 }
+            });
+            // Limpa a seleção de arquivo se uma URL for digitada
+            urlInput.addEventListener('input', () => {
+                if(urlInput.value.trim() !== '') {
+                    fileInput.value = ''; // Limpa a seleção de arquivo
+                 }
+            });
         }
     </script>
 </body>
